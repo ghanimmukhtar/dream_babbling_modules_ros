@@ -93,6 +93,7 @@ void ModulesFinder::_process()
     ssize_t r_sz;
 
     do {
+        //ROS_WARN_STREAM("trying to scan modules, module size is: " << _modules.size());
         std::for_each(_modules.begin(), _modules.end(), [&](std::pair<uint32_t, Module *> p) { // If a module timed out, remove it from the list
             if (!std::get<1>(p)->isOnline()) {
                 delete std::get<1>(p);
@@ -105,6 +106,7 @@ void ModulesFinder::_process()
         _socket_mutex.unlock();
 
         if (r_sz < 0) { // No packet was available
+            //ROS_WARN_STREAM("the retrieved packet is: " << r_sz);
             continue;
         }
 
