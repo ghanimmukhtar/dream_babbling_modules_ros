@@ -17,3 +17,4 @@ git clone https://github.com/fricher/dream_babbling_modules_ros.git ~/catkin_ws/
 - Start the supervisor `rosrun dream_babbling_modules supervisor`
 
 And that's all, now you can power on some modules and check that they are recognized by the supervisor.
+
